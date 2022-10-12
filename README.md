@@ -22,6 +22,29 @@
   <a href = "diegobrenner12@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
   <a href="www.linkedin.com/in/diego-santos-6751861a4" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
  
-  ![Snake animation](https://github.com/devemdobro/devemdobro/blob/output/github-contribution-grid-snake.svg)
+  !nome : Gerar Dados
 
+em :
+  schedule : # executa a cada 12 horas
+-cron     : " * */12 * * * "
+  workflow_dispatch :
+
+empregos :
+  construir :
+    name : Jobs para atualizar dados
+    run-on : ubuntu-latest
+    passos :
+      # Animação de cobra
+      - usa : Platane/snk@master
+        id : cobra-gif
+        com :
+          github_user_name : devemdobro
+          svg_out_path : dist/github-contribution-grid-snake.svg
+
+      - usa : crazy-max/ghaction-github-pages@v2.1.3
+        com :
+          target_branch : saída
+          build_dir : dist
+        ambiente :
+          GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN }}
 </div>
